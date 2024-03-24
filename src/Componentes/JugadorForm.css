@@ -1,0 +1,51 @@
+.jugador-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.jugador-form h2 {
+  margin-top: 0;
+}
+
+.jugador-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.jugador-form input[type="text"],
+.jugador-form textarea,
+.jugador-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.jugador-form input[type="checkbox"],
+.jugador-form input[type="radio"] {
+  margin-right: 5px;
+}
+
+.jugador-form .buttons {
+  margin-top: 20px;
+}
+
+.jugador-form .buttons button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.jugador-form .buttons button:last-child {
+  margin-right: 0;
+}
+
+.jugador-form .buttons button:hover {
+  background-color: #f0f0f0;
+}

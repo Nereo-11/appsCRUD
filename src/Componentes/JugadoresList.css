@@ -1,0 +1,43 @@
+.jugadores-list {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .jugadores-list h2 {
+    margin-top: 0;
+  }
+  
+  /* Estilo de cada jugador en la lista */
+  .jugador {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para el nombre del jugador */
+  .jugador h3 {
+    margin-top: 0;
+  }
+  
+  /* Estilo para los botones de editar y eliminar */
+  .jugador .buttons {
+    margin-top: 10px;
+  }
+  
+  .jugador .buttons button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .jugador .buttons button:last-child {
+    margin-right: 0;
+  }
+  
+  .jugador .buttons button:hover {
+    background-color: #f0f0f0;
+  }
