@@ -1,42 +1,63 @@
-#root {
-  max-width: 1280px;
+.app {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app h1 {
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app input[type="text"],
+.app select {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.app button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
 }
 
-.card {
-  padding: 2em;
+.app button:hover {
+  background-color: #0056b3;
 }
 
-.read-the-docs {
-  color: #888;
+.app .jugador-form {
+  margin-bottom: 20px;
+}
+
+.app .jugador-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.app .jugador-form input[type="text"],
+.app .jugador-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.app .jugador-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.app .jugador-form .buttons {
+  text-align: right;
+}
+
+.app .jugador-form .buttons button {
+  margin-left: 10px;
 }

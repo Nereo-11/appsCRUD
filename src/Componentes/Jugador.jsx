@@ -1,34 +1,15 @@
-import React, { useState } from 'react';
-import Modal from './Modal';
-import JugadorForm from './JugadorForm';
+import React from 'react';
 
-const Jugador = ({ jugador, onDeleteJugador, onUpdateJugador }) => {
-  const { id, nombre, descripcion, habilidades, seleccionado, categoria, imageUrl } = jugador; // Añade la imageUrl
-  const [modalOpen, setModalOpen] = useState(false);
-  const [editedJugador, setEditedJugador] = useState(jugador);
+const Jugador = ({ jugador, onEdit, onDelete }) => {
+  const { id, nombre, descripcion, habilidades, seleccionado, categoria, imageUrl } = jugador;
 
   const handleEditClick = () => {
-    setModalOpen(true);
+    console.log("Clic en editar");
+    onEdit(jugador); // Pasamos el jugador al hacer clic en editar
   };
 
   const handleDeleteClick = () => {
-    onDeleteJugador(id);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  const handleSaveChanges = () => {
-    onUpdateJugador(editedJugador);
-    setModalOpen(false);
-  };
-
-  const handleJugadorChange = (field, value) => {
-    setEditedJugador(prevState => ({
-      ...prevState,
-      [field]: value
-    }));
+    onDelete(id); // Pasamos el ID del jugador al hacer clic en eliminar
   };
 
   return (
@@ -42,19 +23,9 @@ const Jugador = ({ jugador, onDeleteJugador, onUpdateJugador }) => {
       </ul>
       <p>Seleccionado: {seleccionado}</p>
       <p>Categoría: {categoria}</p>
-      {/* Mostrar la imagen si la URL de la imagen está presente */}
       {imageUrl && <img src={imageUrl} alt="Imagen del jugador" />}
       <button onClick={handleEditClick}>Editar</button>
       <button onClick={handleDeleteClick}>Eliminar</button>
-      
-      <Modal isOpen={modalOpen} onClose={closeModal}>
-        <h2>Editar Jugador</h2>
-        <JugadorForm
-          jugador={editedJugador}
-          onFieldChange={handleJugadorChange}
-          onSave={handleSaveChanges}
-        />
-      </Modal>
     </div>
   );
 };

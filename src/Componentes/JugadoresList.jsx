@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Jugador from './Jugador';
-import './JugadoresList.css'; 
+import './JugadoresList.css';
 
-const JugadoresList = ({ jugadores, onDeleteJugador }) => {
-  const handleUpdateJugador = (jugadorActualizado) => {
-    // Actualiza el jugador en la lista de jugadores
-    // Implementa la lógica para actualizar la lista de jugadores según sea necesario
-  };
-
+const JugadoresList = ({ jugadores, onEditJugador, onDeleteJugador }) => {
   return (
     <div className="jugadores-list">
       <h2>Lista de Jugadores</h2>
@@ -15,8 +10,8 @@ const JugadoresList = ({ jugadores, onDeleteJugador }) => {
         <Jugador
           key={jugador.id}
           jugador={jugador}
-          onDeleteJugador={onDeleteJugador}
-          onUpdateJugador={handleUpdateJugador} // Pasa la función de actualización al componente Jugador
+          onEdit={onEditJugador} 
+          onDelete={onDeleteJugador}
         />
       ))}
     </div>

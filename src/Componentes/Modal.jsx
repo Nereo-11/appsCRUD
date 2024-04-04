@@ -1,5 +1,5 @@
 import React from 'react';
-import './Modal.css'; // Importa el archivo CSS para los estilos del modal
+import './Modal.css';
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
@@ -9,6 +9,9 @@ const Modal = ({ isOpen, onClose, children }) => {
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <span className="modal-close" onClick={onClose}>&times;</span>
         {children}
+        <div className="modal-buttons">
+          <button onClick={onClose}>Cancelar</button>
+        </div>
       </div>
     </div>
   );
