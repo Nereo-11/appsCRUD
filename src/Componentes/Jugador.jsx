@@ -21,8 +21,8 @@ const Jugador = ({ jugador, onEdit, onDelete }) => {
           <li key={index}>{habilidad}</li>
         ))}
       </ul>
-      <p>Seleccionado: {seleccionado}</p>
-      <p>Categoría: {categoria}</p>
+      <p>Patrocinador: {seleccionado}</p>
+      <p>Equipo: {categoria}</p>
       {imageUrl && <img src={imageUrl} alt="Imagen del jugador" />}
       <button onClick={handleEditClick}>Editar</button>
       <button onClick={handleDeleteClick}>Eliminar</button>

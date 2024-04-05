@@ -9,6 +9,10 @@ const JugadorForm = ({ jugador, onSave }) => {
   const [imageUrl, setImageUrl] = useState(jugador ? jugador.imageUrl : '');
 
   const handleSaveJugador = () => {
+    if (!nombre || !descripcion || habilidades.length === 0 || !seleccionado || !categoria || !imageUrl) {
+      alert("Por favor, complete todos los campos antes de guardar.");
+      return;
+    }
     const nuevoJugador = {
       id: jugador ? jugador.id : Date.now(), // Genera un ID si es un nuevo jugador
       nombre,
@@ -75,37 +79,37 @@ const JugadorForm = ({ jugador, onSave }) => {
           Fuerza
         </label>
       </div>
-      <label>Seleccionado:</label>
+      <label>Patrocinador:</label>
       <div>
         <label>
           <input
             type="radio"
-            value="Seleccionado 1"
-            checked={seleccionado === 'Seleccionado 1'}
+            value="Nike"
+            checked={seleccionado === 'Nike'}
             onChange={(e) => setSeleccionado(e.target.value)}
           />
-          Seleccionado 1
+          Nike
         </label>
       </div>
       <div>
         <label>
           <input
             type="radio"
-            value="Seleccionado 2"
-            checked={seleccionado === 'Seleccionado 2'}
+            value="Adidas"
+            checked={seleccionado === 'Adidas'}
             onChange={(e) => setSeleccionado(e.target.value)}
           />
-          Seleccionado 2
+          Adidas
         </label>
       </div>
-      <label>Categoría:</label>
+      <label>Equipo:</label>
       <select
         value={categoria}
         onChange={(e) => setCategoria(e.target.value)}
       >
-        <option value="">Selecciona una categoría</option>
-        <option value="Categoria 1">Categoria 1</option>
-        <option value="Categoria 2">Categoria 2</option>
+        <option value="">Selecciona un Equipo</option>
+        <option value="Solteros FC">Solteros FC</option>
+        <option value="Casi Algo FC">Casi Algo FC</option>
       </select>
       <label>URL de la Imagen:</label>
       <input
